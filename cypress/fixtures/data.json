@@ -1,0 +1,26 @@
+[
+  {
+    "animal": "Cachorro",
+    "produto": "Tapete Higiênico Petz para Cães Slim 30un",
+    "valor": "79,99"
+
+  },
+  {
+    "animal": "Gato",
+    "produto": "Areia para Gatos Petz Sílica Cristal 1,6kg",
+    "valor": "50,99"
+
+  },
+  {
+    "animal": "Pássaro",
+    "produto": "Alimento Pássaro Petz Farinhada Mel e Ovos para Calopsita - 300g",
+    "valor": "25,19"
+
+  },
+  {
+    "animal": "Hamster",
+    "produto": "Bebedouro Chalesco Hamster Bico Azul",
+    "valor": "44,99"
+
+  }
+]
