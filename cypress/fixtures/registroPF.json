@@ -1,0 +1,33 @@
+[{
+        "teste": "Email inválido",
+        "field": "2",
+        "idInput": "EmailFisica",
+        "dadoInvalido": "lucas@",
+        "msgErro": "Insira um e-mail válido.",
+        "obrigatorio": "Campo obrigatório."
+    },
+    {
+        "teste": "Celular inválido",
+        "field": "3",
+        "idInput": "CelularFisica",
+        "dadoInvalido": "6199815",
+        "msgErro": "Insira um número de celular válido.",
+        "obrigatorio": "Campo obrigatório."
+    },
+    {
+        "teste": "Data de nascimento inválida",
+        "field": "6",
+        "idInput": "DataNascimento",
+        "dadoInvalido": "21/02/2025",
+        "msgErro": "Data inválida",
+        "obrigatorio": "(opcional) "
+    },
+    {
+        "teste": "CPF inválido",
+        "field": "7",
+        "idInput": "CPF",
+        "dadoInvalido": "3132131",
+        "msgErro": "Insira um CPF válido.",
+        "obrigatorio": "Campo obrigatório."
+    }
+]
