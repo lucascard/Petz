@@ -1,4 +1,8 @@
 {
     "baseUrl": "https://www.petz.com.br/",
-    "experimentalSessionSupport": true
+    "experimentalSessionSupport": true,
+    "env": {
+        "MAILOSAUR_API_KEY": "MF3qEMYk1chWNidQ"
+    }
+
 }
