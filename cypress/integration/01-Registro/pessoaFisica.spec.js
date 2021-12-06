@@ -1,7 +1,6 @@
-describe('Registro PF', () => {
+describe('Tela de Registro PF', () => {
     beforeEach(() => {
         cy.visit('/' + "checkout/cadastro/home")
-
     })
 
     it('PF - Nome inválido ', () => {

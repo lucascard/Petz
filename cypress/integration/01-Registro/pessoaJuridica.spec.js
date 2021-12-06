@@ -1,9 +1,8 @@
-describe('Registro PJ', () => {
+describe('Tela de Registro PJ', () => {
     beforeEach(() => {
         cy.visit('/' + "checkout/cadastro/home")
         cy.get(':nth-child(2) > a > .tab-head').click()
         cy.contains('Razão Social').should('be.visible')
-
     })
 
     it('PJ - Razão Social inválida', () => {
@@ -26,10 +25,7 @@ describe('Registro PJ', () => {
 
         cy.contains('Insira um e-mail válido.')
             .should('be.visible')
-
-
     });
-
 
     it('PJ - Celular inválido', () => {
 
@@ -46,7 +42,6 @@ describe('Registro PJ', () => {
 
     });
 
-
     it('PJ - CNPJ inválido', () => {
 
         cy.get('#cadastroCriarContaJuridica').click()
@@ -61,7 +56,6 @@ describe('Registro PJ', () => {
             .should('be.visible')
     });
 
-
     it('PJ - Inscrição estadual inválida', () => {
 
         cy.get('#cadastroCriarContaJuridica').click()
@@ -70,125 +64,59 @@ describe('Registro PJ', () => {
             .should('be.visible')
 
         cy.get('#cadastroIsentoIE > .check').click()
-        cy.get('#cadastroIE').should('have.disabled', "disabled")
-        cy.get('#cadastroEstadoIE').should('have.disabled', "disabled")
+
+        cy.get('#cadastroIE')
+        .should('have.disabled', "disabled")
+
+        cy.get('#cadastroEstadoIE')
+        .should('have.disabled', "disabled")
     });
 
-
-    it('PJ - Senha inválida', () => {
+    it('PJ - Senha obrigatória', () => {
 
         cy.get('#cadastroCriarContaJuridica').click()
         cy.get('[style=""] > form > :nth-child(9) > .field')
             .contains('Campo obrigatório.')
             .should('be.visible')
 
-
-
-
-
     });
 
     it('PJ - Visualizar senha', () => {
+        cy.get('#cadastroCheckBoxSenhaJuridica > .mdi').click()
+        cy.get('#cadastroCheckBoxConfirmarSenhaJuridica > .mdi').click()
+
+        cy.get('#cadastroConfirmarSenhaJuridica')
+        .should('have.attr', 'type', 'text')
+
+        cy.get('#cadastroSenhaJuridica').type('senhaVisível')
+        .should('have.attr', 'type', 'text')
+    });
+
+    it('PJ -  Senha inválida', () => {
+
+        cy.get('#cadastroSenhaJuridica').type('1')
+        cy.get('#cadastroConfirmarSenhaJuridica').type('1')
 
         cy.get('#cadastroCriarContaJuridica').click()
-        cy.get('[style=""] > form > :nth-child(6) > .field')
-            .contains('Campo de preenchimento obrigatório.').should('be.visible')
-
-        cy.get('#cadastroCNPJ').type('78745')
-        cy.get('#cadastroCriarContaJuridica').click()
-
-        cy.contains('CNPJ inválido')
-            .should('be.visible')
+        cy.contains('Mínimo de 3 caracteres.')
+        .should('be.visible')
     });
 
+    it('PJ - Senha não coincide', () => {
 
-    it('PJ -  inválida', () => {
+        cy.get('#cadastroSenhaJuridica').type('2')
+        cy.get('#cadastroConfirmarSenhaJuridica').type('1')
 
         cy.get('#cadastroCriarContaJuridica').click()
-        cy.get('[style=""] > form > :nth-child(1) > .field')
-            .contains('Campo obrigatório.')
-            .should('be.visible')
+        cy.contains('As senhas não conferem.')
+        .should('be.visible')
     });
 
-    it('PJ - Razão Social inválida', () => {
+    it('PJ - Termo não aceito', () => {
 
         cy.get('#cadastroCriarContaJuridica').click()
-        cy.get('[style=""] > form > :nth-child(1) > .field')
-            .contains('Campo obrigatório.')
-            .should('be.visible')
-    });
-    it('PJ - Razão Social inválida', () => {
 
-        cy.get('#cadastroCriarContaJuridica').click()
-        cy.get('[style=""] > form > :nth-child(1) > .field')
-            .contains('Campo obrigatório.')
-            .should('be.visible')
-    });
-    it('PJ - Razão Social inválida', () => {
-
-        cy.get('#cadastroCriarContaJuridica').click()
-        cy.get('[style=""] > form > :nth-child(1) > .field')
-            .contains('Campo obrigatório.')
-            .should('be.visible')
-    });
-
-
-
-    const registroPF = require('../../fixtures/registroPF')
-
-    registroPF.forEach((register) => {
-        it(`PF - ${register.teste}`, () => {
-            cy.get('.register-title').should('be.visible')
-            cy.get('#cadastroCriarConta').click() //salvar
-
-            cy.get(`[style=""] > form > :nth-child(${register.field}) > .field`)
-                .contains(register.obrigatorio)
-                .should('be.visible')
-
-            cy.get(`#cadastro${register.idInput}`).type(register.dadoInvalido)
-            cy.get('#cadastroCriarConta').click() //salvar
-
-            cy.contains(register.msgErro)
-                .should('be.visible')
-
-        });
-    })
-
-    it('PF - CPF já cadastrado', () => {
-        cy.get('#cadastroNome').type('Lucas Rodrigues')
-        cy.get('#cadastroEmailFisica').type('testetea@gmail.com')
-        cy.get('#cadastroCelularFisica').type('61998156697')
-        cy.get('#cadastroCPF').type('36578208844')
-        cy.get('#cadastroSenhaFisica').type('0208')
-        cy.get('#cadastroConfirmarSenhaFisica').type('0208')
-        cy.get('[style=""] > form > .policiesCheckBox > .field > .b-checkbox > .check').click()
-        cy.get('#cadastroCriarConta').click() //salvar
-        cy.contains('CPF já cadastrado.').should('be.visible')
-
-    });
-
-    it('PF - Senha não coincide', () => {
-        cy.get('#cadastroNome').type('Lucas Rodrigues')
-        cy.get('#cadastroEmailFisica').type('testetea@gmail.com')
-        cy.get('#cadastroCelularFisica').type('61998156697')
-        cy.get('#cadastroCPF').type('42837600059')
-        cy.get('#cadastroSenhaFisica').type('23')
-        cy.get('#cadastroConfirmarSenhaFisica').type('0208')
-        cy.get('[style=""] > form > .policiesCheckBox > .field > .b-checkbox > .check').click()
-        cy.get('#cadastroCriarConta').click() //salvar
-        cy.contains('As senhas não conferem.').should('be.visible')
-
-    });
-
-    it('PF - Senha inválida', () => {
-        cy.get('#cadastroNome').type('Lucas Rodrigues')
-        cy.get('#cadastroEmailFisica').type('testetea@gmail.com')
-        cy.get('#cadastroCelularFisica').type('61998156697')
-        cy.get('#cadastroCPF').type('42837600059')
-        cy.get('#cadastroSenhaFisica').type('23')
-        cy.get('#cadastroConfirmarSenhaFisica').type('23')
-        cy.get('[style=""] > form > .policiesCheckBox > .field > .b-checkbox > .check').click()
-        cy.get('#cadastroCriarConta').click() //salvar
-        cy.contains('Mínimo de 3 caracteres.').should('be.visible')
+        cy.contains('Selecione a opção "Concordo com os termos e condições" para se cadastrar.')
+        .should('be.visible')
     });
 })
