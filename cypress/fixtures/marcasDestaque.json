@@ -1,0 +1,62 @@
+[
+    {
+    "marca": "Bayer Pet",
+    "link": "[href='/bayerpet']",
+    "url": "https://www.petz.com.br/bayerpet"
+},
+{
+    "marca": "Zee.Dog",
+    "link": "[href='/zee-dog']",
+    "url": "https://www.petz.com.br/zee-dog"
+},
+{
+    "marca": "Supersecão",
+    "link": "[href='/supersecao']",
+    "url": "https://www.petz.com.br/supersecao"
+},
+{
+    "marca": "Royal Canin",
+    "link": "[href='/royalcanin']",
+    "url": "https://www.petz.com.br/royal-canin"
+},
+{
+    "marca": "Nestlé Purina",
+    "link": "[href='/purina']",
+    "url": "https://www.petz.com.br/nestle-purina"
+},
+{
+    "marca": "Pet Society",
+    "link": "[href='/pet-society']",
+    "url": "https://www.petz.com.br/pet-society"
+},
+{
+    "marca": "Pedigree",
+    "link": "[href='/pedigree']",
+    "url": "https://www.petz.com.br/pedigree"
+},
+{
+    "marca": "Whiskas",
+    "link": "[href='/whiskas']",
+    "url": "https://www.petz.com.br/whiskas"
+},
+{
+    "marca": "Frontline",
+    "link": "[href='/frontline']",
+    "url": "https://www.petz.com.br/frontline"
+},
+{
+    "marca": "Ferplast",
+    "link": "[href='/ferplast']",
+    "url": "https://www.petz.com.br/ferplast"
+},
+{
+    "marca": "Premier Pet",
+    "link": "[href='/premierpet']",
+    "url": "https://www.petz.com.br/premierpet"
+},
+{
+    "marca": "N&D",
+    "link": "[href='/nd']",
+    "url": "https://www.petz.com.br/nd"
+}
+]
