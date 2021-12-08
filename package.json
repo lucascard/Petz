@@ -1,12 +1,14 @@
 {
   "name": "petzpetz",
   "version": "1.0.0",
-  "description": "",
+  "description": "Testes automatizados e2e para o projeto Petz",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "cypress run",
+    "cy:open": "cypress open"
   },
-  "author": "",
+  "keywords": ["cypress.io", "cypress", "e2e", "testes", "automatizados"],
+  "author": "Lucas Rodrigues Cardoso <cardosolucasrodrigues@gmail.com>",
   "license": "ISC",
   "devDependencies": {
     "cypress": "^9.1.0",
