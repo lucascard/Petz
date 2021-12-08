@@ -11,4 +11,4 @@ Clone este repositório e rode `npm install` (ou `npm i`, forma abreviada)
 ## Execução
 É possível rodar os testes de duas maneiras, executando `npx cypress open` e posteriormente selecionando o teste a ser executado na interface. Ou executando `npm run cypress` para rodar os testes em modo headless.
 
-## Deixa uma ⭐ esse projeto te ajudou de alguma forma.
+## Deixa uma ⭐ se esse projeto te ajudou de alguma forma.
