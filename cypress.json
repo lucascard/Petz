@@ -2,7 +2,10 @@
     "baseUrl": "https://www.petz.com.br/",
     "experimentalSessionSupport": true,
     "env": {
-        "MAILOSAUR_API_KEY": "MF3qEMYk1chWNidQ"
+        "MAILOSAUR_API_KEY": "MF3qEMYk1chWNidQ",
+        "url": "https://www.petz.com.br/",
+        "emailLogin":"lcsestudoslcs@gmail.com",
+        "passwordLogin":"123"
+        
     }
-
 }
