@@ -114,11 +114,11 @@ describe('Tela de login', () => {
 
     it('Login com dados corretos', () => {
 
-        cy.get('#loginEmail').type('lcsestudoslcs@gmail.com')
-        cy.get('#loginPassword').type('123')
+        cy.get('#loginEmail').type(Cypress.env('emailLogin'))
+        cy.get('#loginPassword').type(Cypress.env('passwordLogin'))
         cy.get('#loginEntrar').click()
 
         cy.url()
-            .should('eq', 'https://www.petz.com.br/')
+            .should('eq', Cypress.env('urlLogin'))
     });
 })

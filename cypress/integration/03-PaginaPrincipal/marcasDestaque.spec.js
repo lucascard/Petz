@@ -1,9 +1,9 @@
 describe('Página das marcas em destaque', () => {
     beforeEach(() => {
         cy.session('login petz', () => {
-            cy.visit('https://www.petz.com.br/checkout/login/indexLogado_Loja')
-            cy.get('#loginEmail').type('lcsestudoslcs@gmail.com')
-            cy.get('#loginPassword').type('123')
+            cy.visit(Cypress.env('url')+'checkout/login/indexLogado_Loja')
+            cy.get('#loginEmail').type(Cypress.env('emailLogin'))
+            cy.get('#loginPassword').type(Cypress.env('passwordLogin'))
             cy.get('#loginEntrar').click()
         })
     });
@@ -26,8 +26,6 @@ describe('Página das marcas em destaque', () => {
         cy.contains('produtos da marca Bayer Pet').should('be.visible')
         cy.url()
             .should('eq', 'https://www.petz.com.br/bayerpet')
-
-
     }); */
 
 });

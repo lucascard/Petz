@@ -11,8 +11,8 @@ describe('Testes API', () => {
             body: {
                 logar: false,
                 action: 'Login',
-                login: "lcsestudoslcs@gmail.com",
-                senha: "123"
+                login: Cypress.env('emailLogin'),
+                senha: Cypress.env('passwordLogin')
             }
         }).then(res => console.log(res))
     });
