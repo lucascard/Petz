@@ -1,11 +1,5 @@
 {
     "baseUrl": "https://www.petz.com.br/",
-    "experimentalSessionSupport": true,
-    "env": {
-        "MAILOSAUR_API_KEY": "MF3qEMYk1chWNidQ",
-        "serverDomain": "vgurqsmy.mailosaur.net",
-        "url": "https://www.petz.com.br/",
-        "emailLogin":"lcsestudoslcs@gmail.com",
-        "passwordLogin":"123"
-    }
+    "experimentalSessionSupport": true
+    
 }
