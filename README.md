@@ -16,8 +16,8 @@ Clone este repositório e rode `npm install` (ou `npm i`, forma abreviada)
 
 Por meio de scripts, é possível rodar os testes de duas maneiras.
 
-Executando `cypress open` e posteriormente selecionando o teste a ser executado na interface.
+Executando `npm cy:open` e posteriormente selecionando o teste a ser executado na interface.
 
-Executando `cypress run` para rodar os testes em modo headless.
+Executando `npm test` para rodar os testes em modo headless.
 
 ## Deixe uma ⭐ se esse projeto te ajudou de alguma forma.
