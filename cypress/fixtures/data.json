@@ -1,13 +1,5 @@
 [
   {
-    "animal": "Cachorro",
-    "produto": "Tapete Higiênico Petz para Cães Slim 30un",
-    "valor": "79,99",
-    "codigo": "149568",
-    "urlBusca": "Cachorro",
-    "urlProduto": "tapete-higienico-petz-para-caes-ultra-absorvente-slim-30un-"
-  },
-  {
     "animal": "Gato",
     "produto": "Areia para Gatos Petz Sílica Cristal 1,6kg",
     "valor": "50,99",
@@ -16,11 +8,11 @@
     "urlProduto": "areia-para-gatos-petz-silica-cristal-1,6kg"
   },
   {
-    "animal": "Pássaro",
-    "produto": "Alimento Pássaro Petz Farinhada Mel e Ovos para Calopsita - 300g",
-    "valor": "32,39",
-    "codigo": "163384",
-    "urlBusca": "P%C3%A1ssaro",
-    "urlProduto": "alimento-passaro-petz-farinhada-mel-e-ovos-para-calopsita-300g"
+    "animal": "Cachorro",
+    "produto": "Tapete Higiênico Petz para Cães Slim 30un",
+    "valor": "79,99",
+    "codigo": "149568",
+    "urlBusca": "Cachorro",
+    "urlProduto": "tapete-higienico-petz-para-caes-ultra-absorvente-slim-30un-"
   }
 ]
