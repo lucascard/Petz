@@ -17,7 +17,6 @@
 
 // Alternatively you can use CommonJS syntax:
 // require('./commands')
-import './commands'
 Cypress.on('uncaught:exception', (err, runnable) => {
   // returning false here prevents Cypress from failing the test
   return false
@@ -41,3 +40,7 @@ if (!app.document.head.querySelector('[data-hide-command-log-request]')) {
 
   app.document.head.appendChild(style);
 }
+
+import 'cypress-mailosaur'
+
+import 'cypress-mochawesome-reporter/register';
