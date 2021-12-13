@@ -113,13 +113,13 @@ describe('Tela de login', () => {
         })
     });
 
-    it('Login com dados corretos', () => {
+    it.only('Login com dados corretos', () => {
 
         cy.get('#loginEmail').type(Cypress.env('emailLogin'))
         cy.get('#loginPassword').type(Cypress.env('passwordLogin'))
         cy.get('#loginEntrar').click()
 
         cy.url()
-            .should('eq', Cypress.env('urlLogin'))
+            .should('eq', ('https://www.petz.com.br/'))
     });
 })
