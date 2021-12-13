@@ -113,7 +113,7 @@ describe('Tela de login', () => {
         })
     });
 
-    it.only('Login com dados corretos', () => {
+    it('Login com dados corretos', () => {
 
         cy.get('#loginEmail').type(Cypress.env('emailLogin'))
         cy.get('#loginPassword').type(Cypress.env('passwordLogin'))
