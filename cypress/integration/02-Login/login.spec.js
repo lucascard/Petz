@@ -1,3 +1,4 @@
+/// <reference types="Cypress" />
 describe('Tela de login', () => {
     beforeEach(() => {
         cy.visit('/' + 'checkout/login/indexLogado_Loja')
