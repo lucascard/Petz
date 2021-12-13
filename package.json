@@ -7,11 +7,21 @@
     "test": "cypress run",
     "cy:open": "cypress open"
   },
-  "keywords": ["cypress.io", "cypress", "e2e", "testes", "automatizados"],
+  "keywords": [
+    "cypress.io",
+    "cypress",
+    "e2e",
+    "testes",
+    "automatizados"
+  ],
   "author": "Lucas Rodrigues Cardoso <cardosolucasrodrigues@gmail.com>",
   "license": "ISC",
   "devDependencies": {
     "cypress": "^9.1.0",
-    "cypress-mailosaur": "^2.5.6"
+    "cypress-mailosaur": "^2.5.6",
+    "cypress-mochawesome-reporter": "^2.3.0"
+  },
+  "dependencies": {
+    "reporter": "^0.1.0"
   }
 }
