@@ -12,7 +12,7 @@ describe('Carrinho', () => {
     const data = require('../../fixtures/data')
 
     data.forEach((item) => {
-        it(`Adicionar item ${item.codigo} no carrinho e conferir o preço`, () => {
+        it(`Adicionar item ${item.codigo} no carrinho`, () => {
             cy.visit('/')
 
             cy.get('#search').type(item.animal + '{enter}')
@@ -29,11 +29,6 @@ describe('Carrinho', () => {
 
             cy.url()
                 .should('include', '/checkout/cart/')
-
-            cy.get(`#cart-item-${item.codigo} > .money`)
-                .should('contain', item.valor)
-
-            cy.get('.logo').click()
         });
     })
 
@@ -61,15 +56,68 @@ describe('Carrinho', () => {
         })
     })
 
+    it(`Finalizando a compra`, () => {
+        cy.visit('/')
+
+        cy.get('.icon-carrinho').click()
+
+        cy.get("body", { log: false }).then($body => {
+            if ($body.find('[class="button link fn-s08"]').length > 0) {
+
+            } else {
+                cy.get('#cepSearch').type('72320104')
+            }
+        })
+
+        cy.get('#pickup').click()
+
+        cy.contains(' Retire na loja ')
+            .should('be.visible')
+
+        cy.contains(' Candangolândia- Brasília- DF ').click()
+
+        cy.contains('Retire nesta loja').click()
+
+        cy.get('.shipping-chosed-information')
+            .should('be.visible')
+
+
+
+        cy.get('#cartButtonConfirm').click()
+
+        cy.get("body", { log: false }).then($body => {
+            if ($body.find('[class="footer"]').length > 0) {
+
+                cy.get('[class="button bg-green fn-s09"]').click()
+
+                cy.get('[name="name"]').type('casa')
+
+                cy.contains('Número').next().type('21')
+
+                cy.get('[name="addressLine1"]').type('Rua dos bobos')
+
+                cy.get('[name="district"]').type('Centro')
+
+                cy.get('name="city"').type('Brasília')
+
+                cy.get('[name="state"]').select(' DF ')
+
+                cy.get('[class="button bg-green"]').click()
+            }
+        })
+
+        cy.url()
+            .should('include', 'https://www.petz.com.br/checkout/checkout/')
+    })
+
     it(`Verificar valor final da compra`, () => {
         cy.visit('/')
 
         cy.get('.icon-carrinho').click()
 
         cy.get('.fn-wb > .tx-blue')
-            .should('contain', '163,37')
+            .should('contain', '124,43')
     })
-
 
     data.forEach((item) => {
         it(`Remover item ${item.codigo} carrinho`, () => {
@@ -93,7 +141,7 @@ describe('Carrinho', () => {
         cy.get('.icon-carrinho').click()
 
         cy.contains('Seu carrinho está vazio').should('be.visible')
-        
+
     });
 
 });
